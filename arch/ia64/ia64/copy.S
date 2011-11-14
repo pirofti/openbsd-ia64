@@ -52,6 +52,9 @@
  * rights to redistribute these changes.
  */
 
+#include <sys/errno.h>
+#include <sys/syscall.h>
+
 #include <machine/asm.h>
 #include <machine/ia64_cpu.h>
 
