@@ -208,6 +208,7 @@ typedef struct _boot_args32 {
 #define BOOTARGC_MAX	NBPG	/* one page */
 
 /* locore copies the arguments from /boot to here for us */
+u_int64_t pa_bootinfo;
 char bootinfo[BOOTARGC_MAX];
 int bootinfo_size = BOOTARGC_MAX;
 

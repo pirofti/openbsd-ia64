@@ -9,6 +9,8 @@ include <sys/exec.h>
 include <sys/exec_elf.h>
 
 include <machine/exec.h>
+include <machine/pcb.h>
+include <machine/reg.h>
 
 struct	proc
 member	p_addr
@@ -46,6 +48,14 @@ member	ep_emul_arg
 member	ep_emul_argp
 member	ep_interp
 member	ep_interp_pos
+
+struct pcb
+member PCB_CURRENT_PMAP pcb_pmap
+member PCB_ONFAULT pcb_onfault
+
+define SIZEOF_PCB	sizeof(struct pcb)
+define SIZEOF_SPECIAL	sizeof(struct _special)
+define SIZEOF_TRAPFRAME	sizeof(struct trapframe)
 
 export DT_NULL
 export DT_SYMTAB
