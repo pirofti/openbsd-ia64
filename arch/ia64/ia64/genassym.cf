@@ -1,0 +1,60 @@
+#	$OpenBSD$
+#	Written by Paul Irofti pirofti@openbsd.org, Public Domain
+
+include <sys/types.h>
+include <sys/param.h>
+include <sys/proc.h>
+include <sys/exec.h>
+
+include <sys/exec_elf.h>
+
+include <machine/exec.h>
+
+struct	proc
+member	p_addr
+member	p_priority
+member	p_stat
+member	p_wchan
+member	P_MD_REGS	p_md.md_regs
+member	P_MD_FLAGS	p_md.md_flags
+member	P_MD_ASTPENDING	p_md.md_astpending
+member	p_flag
+member	p_cpu
+
+struct exec_package
+member	ep_name
+member	ep_hdr
+member	ep_hdrlen
+member	ep_hdrvalid
+member  ep_ndp
+member	exec_vmcmd_set ep_vmcmds
+member	ep_vp
+member	ep_vap
+member	ep_taddr
+member	ep_tsize
+member	ep_daddr
+member	ep_dsize
+member	ep_maxsaddr
+member	ep_minsaddr
+member	ep_ssize
+member	ep_entry
+member	ep_flags
+member	ep_fa
+member	ep_fd
+member  ep_emul
+member	ep_emul_arg
+member	ep_emul_argp
+member	ep_interp
+member	ep_interp_pos
+
+export DT_NULL
+export DT_SYMTAB
+export DT_RELA
+export DT_RELASZ
+export DT_RELAENT
+export DT_SYMENT
+
+export R_IA_64_NONE
+export R_IA_64_DIR64LSB
+export R_IA_64_FPTR64LSB
+export R_IA_64_REL64LSB
