@@ -18,7 +18,7 @@ file	arch/ia64/ia64/pmap.c
 #file	arch/ia64/ia64/process_machdep.c
 #file	arch/ia64/ia64/sys_machdep.c
 #file	arch/ia64/ia64/syscall.c
-#file	arch/ia64/ia64/trap.c
+file	arch/ia64/ia64/trap.c
 #file	arch/ia64/ia64/vm_machdep.c
 #file	arch/ia64/ia64/fpu.c
 #file	arch/ia64/ia64/softintr.c

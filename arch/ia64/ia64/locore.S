@@ -71,7 +71,7 @@ ENTRY_NOPROFILE(__start, 1)
 	.body
 {	.mlx
 	mov	ar.rsc=0
-	movl	r16=ia64_vector_table	// set up IVT early
+	movl	r16=trap_type	// set up IVT early
 	;;
 }
 {	.mlx
@@ -271,7 +271,7 @@ ENTRY_NOPROFILE(os_boot_rendez,0)
 2:
 {	.mlx
 	mov	ar.rsc = 0
-	movl	r16 = ia64_vector_table			// set up IVT early
+	movl	r16 = trap_type				// set up IVT early
 	;;
 }
 {	.mlx
