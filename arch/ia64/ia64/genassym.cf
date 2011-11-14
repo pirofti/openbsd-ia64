@@ -10,6 +10,7 @@ include <sys/exec_elf.h>
 
 include <machine/exec.h>
 include <machine/pcb.h>
+include <machine/vmparam.h>
 include <machine/reg.h>
 
 struct	proc
@@ -21,7 +22,8 @@ member	P_MD_REGS	p_md.md_regs
 member	P_MD_FLAGS	p_md.md_flags
 member	P_MD_ASTPENDING	p_md.md_astpending
 member	p_flag
-member	p_cpu
+member	PC_CURTHREAD	p_cpu
+member	TD_PCB		p_tcb
 
 struct exec_package
 member	ep_name
@@ -68,3 +70,5 @@ export R_IA_64_NONE
 export R_IA_64_DIR64LSB
 export R_IA_64_FPTR64LSB
 export R_IA_64_REL64LSB
+
+export VM_MAXUSER_ADDRESS
