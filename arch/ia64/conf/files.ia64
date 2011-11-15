@@ -5,14 +5,14 @@ maxusers 2 16 128
 
 file	arch/ia64/ia64/autoconf.c
 file	arch/ia64/ia64/conf.c
-#file	arch/ia64/ia64/disksubr.c		disk
+file	arch/ia64/ia64/disksubr.c		disk
 #file	arch/ia64/ia64/gdt.c			multiprocessor
 file	arch/ia64/ia64/machdep.c
 #file	arch/ia64/ia64/identcpu.c
 #file	arch/ia64/ia64/via.c
 #file	arch/ia64/ia64/aes_intel.S		crypto
 #file	arch/ia64/ia64/aesni.c		crypto
-#file	arch/ia64/ia64/mem.c
+file	arch/ia64/ia64/mem.c
 #file	arch/ia64/ia64/ia64_mem.c		mtrr
 file	arch/ia64/ia64/pmap.c
 #file	arch/ia64/ia64/process_machdep.c
@@ -21,7 +21,7 @@ file	arch/ia64/ia64/pmap.c
 file	arch/ia64/ia64/trap.c
 #file	arch/ia64/ia64/vm_machdep.c
 #file	arch/ia64/ia64/fpu.c
-#file	arch/ia64/ia64/softintr.c
+file	arch/ia64/ia64/softintr.c
 #file	arch/ia64/ia64/i8259.c
 #file	arch/ia64/ia64/cacheinfo.c
 file	arch/ia64/ia64/mutex.c
@@ -52,8 +52,8 @@ file	arch/ia64/ia64/db_interface.c		ddb
 #file	arch/ia64/ia64/db_memrw.c		ddb | kgdb
 #file	arch/ia64/ia64/db_trace.c		ddb
 
-#file	netinet/in_cksum.c			inet
-#file	netinet/in4_cksum.c			inet
+file	netinet/in_cksum.c			inet
+file	netinet/in4_cksum.c			inet
 
 #file	arch/ia64/ia64/kgdb_machdep.c		kgdb
 
@@ -180,7 +180,7 @@ define	pckbcport {[irq = -1], [port = -1]}
 include	"dev/wscons/files.wscons"
 include	"dev/pckbc/files.pckbc"
 
-#file	arch/ia64/ia64/wscons_machdep.c	wsdisplay
+file	arch/ia64/ia64/wscons_machdep.c	wsdisplay
 
 # Floppy disk controller
 #device	fdc {[drive = -1]}

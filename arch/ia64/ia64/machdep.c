@@ -100,6 +100,7 @@
 #include <sys/sysctl.h>
 
 #include <machine/cpu.h>
+#include <machine/biosvar.h>
 #include <machine/reg.h>
 
 #ifdef DDB
@@ -191,9 +192,6 @@ pid_t sigpid = 0;
 
 paddr_t avail_start;
 paddr_t avail_end;
-
-void (*delay_func)(int) = i8254_delay;
-void (*initclock_func)(void) = i8254_initclocks;
 
 /*
  * Format of boot information passed to us by 32-bit /boot
@@ -487,4 +485,10 @@ splassert_check(int wantipl, const char *func)
 void
 getbootinfo(char *bootinfo, int bootinfo_size)
 {
+}
+
+bios_diskinfo_t *
+bios_getdiskinfo(dev_t dev)
+{
+	return NULL;
 }

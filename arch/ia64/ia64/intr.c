@@ -35,3 +35,8 @@ spllower(int nlevel)
 	return 0;
 }
 
+void
+softintr(int sir)
+{
+}
+
