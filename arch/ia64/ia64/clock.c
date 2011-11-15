@@ -18,3 +18,16 @@ void
 inittodr(time_t t)
 {
 }
+
+/*
+ * Reset the clock.
+ */
+void
+resettodr(void)
+{
+}
+
+void
+setstatclockrate(int newhz)
+{
+}

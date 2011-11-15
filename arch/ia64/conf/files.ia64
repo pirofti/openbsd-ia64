@@ -16,7 +16,7 @@ file	arch/ia64/ia64/mem.c
 #file	arch/ia64/ia64/ia64_mem.c		mtrr
 file	arch/ia64/ia64/pmap.c
 file	arch/ia64/ia64/process_machdep.c
-#file	arch/ia64/ia64/sys_machdep.c
+file	arch/ia64/ia64/sys_machdep.c
 #file	arch/ia64/ia64/syscall.c
 file	arch/ia64/ia64/trap.c
 file	arch/ia64/ia64/vm_machdep.c

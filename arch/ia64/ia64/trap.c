@@ -149,3 +149,11 @@ frame_dump(struct trapframe *tf)
 {
 }
 #endif
+
+/*
+ * Process the tail end of a fork() for the child.
+ */
+void
+child_return(void *arg)
+{
+}

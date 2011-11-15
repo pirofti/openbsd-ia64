@@ -259,6 +259,14 @@ int allowaperture = 0;
 #endif
 #endif
 
+/* sysctl wants this */
+char cpu_model[48];
+int cpuspeed;
+
+struct	user *proc0paddr;
+
+char *ssym, *esym;
+
 /*
  * Machine-dependent startup code
  */
@@ -493,4 +501,27 @@ bios_diskinfo_t *
 bios_getdiskinfo(dev_t dev)
 {
 	return NULL;
+}
+
+
+int
+copyoutstr(const void *kaddr, void *udaddr, size_t len, size_t *done)
+{
+	return 0;
+}
+
+void
+cpu_switchto(struct proc *oldproc, struct proc *newproc)
+{
+}
+
+int
+kcopy(const void *from, void *to, size_t size)
+{
+	return 0;
+}
+
+void
+consinit()
+{
 }

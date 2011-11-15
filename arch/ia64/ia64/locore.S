@@ -290,3 +290,10 @@ EXPORT(eintrcnt)
 fptr_storage:
 	.space	4096*16			// XXX
 fptr_storage_end:
+
+/*
+ * Signal trampoline; copied to top of user stack.
+ * gdb's backtrace logic matches against the instructions in this.
+ */
+ENTRY(sigcode,0)
+ENTRY(esigcode,0)
