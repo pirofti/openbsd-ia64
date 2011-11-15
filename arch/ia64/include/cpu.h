@@ -264,6 +264,16 @@ extern void (*cpu_idle_enter_fcn)(void);
 extern void (*cpu_idle_cycle_fcn)(void);
 extern void (*cpu_idle_leave_fcn)(void);
 
+/*
+ * definitions of cpu-dependent requirements
+ * referenced in generic code
+ */
+#define	cpu_exec(p)		do { /* nothing */ } while (0)
+
+#define	cpu_idle_enter()	do { /* nothing */ } while (0)
+#define	cpu_idle_cycle()	do { /* nothing */ } while (0)
+#define	cpu_idle_leave()	do { /* nothing */ } while (0)
+
 struct region_descriptor;
 void	lgdt(struct region_descriptor *);
 

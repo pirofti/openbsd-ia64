@@ -46,6 +46,8 @@
 #define	USPACE		(UPAGES * NBPG)	/* total size of u-area */
 #define	USPACE_ALIGN	(0)		/* u-area alignment 0-none */
 
+#define ovbcopy bcopy
+
 #include <machine/cpu.h>	/* needed by param.c */
 
 #endif /* _IA64_PARAM_H_ */

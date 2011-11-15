@@ -15,11 +15,11 @@ file	arch/ia64/ia64/machdep.c
 file	arch/ia64/ia64/mem.c
 #file	arch/ia64/ia64/ia64_mem.c		mtrr
 file	arch/ia64/ia64/pmap.c
-#file	arch/ia64/ia64/process_machdep.c
+file	arch/ia64/ia64/process_machdep.c
 #file	arch/ia64/ia64/sys_machdep.c
 #file	arch/ia64/ia64/syscall.c
 file	arch/ia64/ia64/trap.c
-#file	arch/ia64/ia64/vm_machdep.c
+file	arch/ia64/ia64/vm_machdep.c
 #file	arch/ia64/ia64/fpu.c
 file	arch/ia64/ia64/softintr.c
 #file	arch/ia64/ia64/i8259.c
@@ -58,22 +58,22 @@ file	netinet/in4_cksum.c			inet
 #file	arch/ia64/ia64/kgdb_machdep.c		kgdb
 
 # Basic clock - required
-#file	arch/ia64/isa/clock.c
+file	arch/ia64/ia64/clock.c
 
 #file	arch/ia64/ia64/powernow-k8.c		!small_kernel
 #file	arch/ia64/ia64/est.c			!small_kernel
 #file	arch/ia64/ia64/k1x-pstate.c		!small_kernel
 
-include "dev/rasops/files.rasops"
-include "dev/wsfont/files.wsfont"
+#include "dev/rasops/files.rasops"
+#include "dev/wsfont/files.wsfont"
 
-include	"dev/mii/files.mii"
+#include	"dev/mii/files.mii"
 
 include	"scsi/files.scsi"
 
-include	"dev/i2o/files.i2o"
+#include	"dev/i2o/files.i2o"
 
-include	"dev/atapiscsi/files.atapiscsi"
+#include	"dev/atapiscsi/files.atapiscsi"
 include	"dev/ata/files.ata"
 
 define	mainbus {}
@@ -109,12 +109,12 @@ file	arch/ia64/ia64/cpu.c	cpu
 # PCI drivers
 #
 
-include	"dev/pci/files.pci"
+#include	"dev/pci/files.pci"
 #file	arch/ia64/pci/pci_machdep.c		pci
 #file	arch/ia64/pci/pciide_machdep.c		pciide
 #file	arch/ia64/pci/vga_post.c		vga_pci & x86emu
 
-include	"dev/puc/files.puc"
+#include	"dev/puc/files.puc"
 
 # PCI Host bridge chipsets
 #device	pchb: pcibus, agpbus
@@ -144,7 +144,7 @@ include	"dev/puc/files.puc"
 #attach	pcic at pci with pcic_pci
 #file	dev/pci/i82365_pci.c			pcic_pci
 
-include	"dev/pcmcia/files.pcmcia"
+#include	"dev/pcmcia/files.pcmcia"
 
 # PCI-ISA bridges
 #device	pcib: isabus
@@ -169,18 +169,18 @@ include	"dev/pcmcia/files.pcmcia"
 # ISA drivers
 #
 
-include	"dev/isa/files.isa"
-include	"dev/isa/files.isapnp"
+#include	"dev/isa/files.isa"
+#include	"dev/isa/files.isapnp"
 #file	arch/ia64/isa/isa_machdep.c		isa
 
 # attribute used to represent the "keyboard controller"
 # XXX should be a real device
 define	pckbcport {[irq = -1], [port = -1]}
 
-include	"dev/wscons/files.wscons"
-include	"dev/pckbc/files.pckbc"
+#include	"dev/wscons/files.wscons"
+#include	"dev/pckbc/files.pckbc"
 
-file	arch/ia64/ia64/wscons_machdep.c	wsdisplay
+#file	arch/ia64/ia64/wscons_machdep.c	wsdisplay
 
 # Floppy disk controller
 #device	fdc {[drive = -1]}
@@ -203,22 +203,22 @@ file	arch/ia64/ia64/wscons_machdep.c	wsdisplay
 #
 # USB
 #
-include	"dev/usb/files.usb"
+#include	"dev/usb/files.usb"
 
 #
 # Bluetooth
 #
-include "dev/bluetooth/files.bluetooth"
+#include "dev/bluetooth/files.bluetooth"
 
 #
 # I2C
 #
-include "dev/i2c/files.i2c"
+#include "dev/i2c/files.i2c"
 
 #
 # Machine-independent GPIO drivers
 #
-include "dev/gpio/files.gpio"
+#include "dev/gpio/files.gpio"
 
 #
 # ACPI
@@ -230,12 +230,12 @@ include "dev/gpio/files.gpio"
 #
 # Machine-independent SD/MMC drivers
 #
-include "dev/sdmmc/files.sdmmc"
+#include "dev/sdmmc/files.sdmmc"
 
 #
 # Machine-independent 1-Wire drivers
 #
-include "dev/onewire/files.onewire"
+#include "dev/onewire/files.onewire"
 
 #
 # IPMI

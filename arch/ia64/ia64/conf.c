@@ -429,7 +429,7 @@ cons_decl(com);
 cons_decl(ws);
 
 struct	consdev constab[] = {
-#if 1 || NWSDISPLAY > 0
+#if NWSDISPLAY > 0
 	cons_init(ws),
 #endif
 #if NCOM > 0

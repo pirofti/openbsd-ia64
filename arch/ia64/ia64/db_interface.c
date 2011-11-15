@@ -157,3 +157,8 @@ struct db_variable db_regs[] = {
 	{"r127",	(db_expr_t*)95,			FCN_NULL},
 };
 struct db_variable *db_eregs = db_regs + sizeof(db_regs)/sizeof(db_regs[0]);
+
+void
+Debugger(void)
+{
+}

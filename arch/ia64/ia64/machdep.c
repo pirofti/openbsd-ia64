@@ -212,6 +212,8 @@ int bootinfo_size = BOOTARGC_MAX;
 
 void getbootinfo(char *, int);
 
+struct consdev *cn_tab;
+
 /*
  * Size of memory segments, before any memory is stolen.
  */
