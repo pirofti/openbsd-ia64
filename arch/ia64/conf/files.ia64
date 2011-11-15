@@ -47,10 +47,10 @@ file	arch/ia64/ia64/intr.c
 
 #file	arch/ia64/ia64/dkcsum.c		bios
 
-#file	arch/ia64/ia64/db_disasm.c		ddb
+file	arch/ia64/ia64/db_disasm.c		ddb
 file	arch/ia64/ia64/db_interface.c		ddb
 #file	arch/ia64/ia64/db_memrw.c		ddb | kgdb
-#file	arch/ia64/ia64/db_trace.c		ddb
+file	arch/ia64/ia64/db_trace.c		ddb
 
 file	netinet/in_cksum.c			inet
 file	netinet/in4_cksum.c			inet

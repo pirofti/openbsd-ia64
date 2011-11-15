@@ -37,4 +37,7 @@ extern db_regs_t ddb_regs;		/* register state */
 #define	IS_BREAKPOINT_TRAP(type, code)	((type) == T_BPTFLT)
 #define IS_WATCHPOINT_TRAP(type, code)	((type) == T_TRCTRAP && (code) & 15)
 
+#define	db_clear_single_step(regs)	((regs)->tf_flags &= 0)
+#define	db_set_single_step(regs)	((regs)->tf_flags |= 1)
+
 #endif

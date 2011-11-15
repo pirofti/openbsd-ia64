@@ -296,4 +296,10 @@ fptr_storage_end:
  * gdb's backtrace logic matches against the instructions in this.
  */
 ENTRY(sigcode,0)
+END(sigcode)
 ENTRY(esigcode,0)
+END(esigcode)
+ENTRY(longjmp,0)
+END(longjmp)
+ENTRY(setjmp,0)
+END(setjmp)

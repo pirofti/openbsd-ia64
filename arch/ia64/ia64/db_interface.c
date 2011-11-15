@@ -162,3 +162,19 @@ void
 Debugger(void)
 {
 }
+
+/*
+ * Write bytes to kernel address space for debugger.
+ */
+void
+db_write_bytes(vaddr_t addr, size_t size, char *data)
+{
+}
+
+/*
+ * Read bytes from kernel address space for debugger.
+ */
+void
+db_read_bytes(vaddr_t addr, size_t size, char *data)
+{
+}
