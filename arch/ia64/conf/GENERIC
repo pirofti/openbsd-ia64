@@ -601,7 +601,6 @@ uk*	at scsibus?			# unknown SCSI
 #pseudo-device	pctr		1
 #pseudo-device	nvram		1
 #pseudo-device	sequencer	1
-#pseudo-device	raid		4	# RAIDframe disk driver
 #pseudo-device	hotplug		1	# devices hot plugging
 #pseudo-device	mtrr		1	# Memory range attributes control
 
