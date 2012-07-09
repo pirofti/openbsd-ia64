@@ -122,8 +122,6 @@ cdev_decl(lpt);
 #include "pcmcia.h"
 cdev_decl(pcmcia);
 #endif
-#include "spkr.h"
-cdev_decl(spkr);
 #if 0 /* old (non-wsmouse) drivers */
 #include "mms.h"
 cdev_decl(mms);
@@ -140,31 +138,15 @@ cdev_decl(cy);
 #include "midi.h"
 #include "sequencer.h"
 cdev_decl(music);
-#include "bthub.h"
-#include "iop.h"
 #ifdef NNPFS
 #include <nnpfs/nnnpfs.h>
 cdev_decl(nnpfs_dev);
 #endif
-#include "bktr.h"
 #include "ksyms.h"
-#include "usb.h"
-#include "uhid.h"
-#include "ugen.h"
-#include "ulpt.h"
-#include "urio.h"
-#include "ucom.h"
-#include "uscanner.h"
-#include "cz.h"
 cdev_decl(cztty);
 #include "radio.h"
 #include "drm.h"
 cdev_decl(drm);
-
-#include "wsdisplay.h"
-#include "wskbd.h"
-#include "wsmouse.h"
-#include "wsmux.h"
 
 #ifdef USER_PCICONF
 #include "pci.h"
@@ -173,7 +155,6 @@ cdev_decl(pci);
 
 #include "pf.h"
 #include "hotplug.h"
-#include "gpio.h"
 #include "vscsi.h"
 #include "pppx.h"
 
@@ -191,8 +172,7 @@ struct cdevsw	cdevsw[] =
 	cdev_notdef(),			/* 9: floppy disk */
 	cdev_notdef(),			/* 10 */
 	cdev_lkm_dummy(),		/* 11: Sony CD-ROM */
-	cdev_wsdisplay_init(NWSDISPLAY,	/* 12: frame buffers, etc. */
-	    wsdisplay),
+	cdev_notdef(),			/* 12: frame buffers, etc. */
 	cdev_disk_init(NSD,sd),		/* 13: SCSI disk */
 	cdev_tape_init(NST,st),		/* 14: SCSI tape */
 	cdev_disk_init(NCD,cd),		/* 15: SCSI CD-ROM */
@@ -211,7 +191,7 @@ struct cdevsw	cdevsw[] =
 	cdev_notdef(),			/* 25 */
 #endif
 	cdev_notdef(),			/* 26 */
-	cdev_spkr_init(NSPKR,spkr),	/* 27: PC speaker */
+	cdev_notdef(),			/* 27: PC speaker */
 	cdev_lkm_init(NLKM,lkm),	/* 28: loadable module driver */
 	cdev_lkm_dummy(),		/* 29 */
 	cdev_lkm_dummy(),		/* 30 */
@@ -233,7 +213,7 @@ struct cdevsw	cdevsw[] =
 	cdev_notdef(),			/* 46: performance counters */
 	cdev_disk_init(NRD,rd),		/* 47: ram disk driver */
 	cdev_notdef(),			/* 48 */
-	cdev_bktr_init(NBKTR,bktr),     /* 49: Bt848 video capture device */
+	cdev_notdef(),			/* 49: Bt848 video capture device */
 	cdev_ksyms_init(NKSYMS,ksyms),	/* 50: Kernel symbols device */
 #ifdef NNPFS
 	cdev_nnpfs_init(NNNPFS,nnpfs_dev),	/* 51: nnpfs communication device */
@@ -251,18 +231,17 @@ struct cdevsw	cdevsw[] =
 	cdev_notdef(),			/* 59: i4b trace device */
 	cdev_notdef(),			/* 60: i4b phone device */
 	/* End of reserved slots for isdn4bsd. */
-	cdev_usb_init(NUSB,usb),	/* 61: USB controller */
-	cdev_usbdev_init(NUHID,uhid),	/* 62: USB generic HID */
-	cdev_usbdev_init(NUGEN,ugen),	/* 63: USB generic driver */
-	cdev_ulpt_init(NULPT,ulpt),	/* 64: USB printers */
-	cdev_urio_init(NURIO,urio),	/* 65: USB Diamond Rio 500 */
-	cdev_tty_init(NUCOM,ucom),	/* 66: USB tty */
-	cdev_mouse_init(NWSKBD, wskbd),	/* 67: keyboards */
-	cdev_mouse_init(NWSMOUSE,	/* 68: mice */
-	    wsmouse),
-	cdev_mouse_init(NWSMUX, wsmux),	/* 69: ws multiplexor */
+	cdev_notdef(),			/* 61: USB controller */
+	cdev_notdef(),			/* 62: USB generic HID */
+	cdev_notdef(),			/* 63: USB generic driver */
+	cdev_notdef(),			/* 64: USB printers */
+	cdev_notdef(),			/* 65: USB Diamond Rio 500 */
+	cdev_notdef(),			/* 66: USB tty */
+	cdev_notdef(),			/* 67: keyboards */
+	cdev_notdef(),			/* 68: mice */
+	cdev_notdef(),			/* 69: ws multiplexor */
 	cdev_crypto_init(NCRYPTO,crypto), /* 70: /dev/crypto */
-	cdev_tty_init(NCZ,cztty),	/* 71: Cyclades-Z serial port */
+	cdev_notdef(),			/* 71: Cyclades-Z serial port */
 #ifdef USER_PCICONF
 	cdev_pci_init(NPCI,pci),        /* 72: PCI user */
 #else
@@ -270,20 +249,20 @@ struct cdevsw	cdevsw[] =
 #endif
 	cdev_pf_init(NPF,pf),		/* 73: packet filter */
 	cdev_notdef(),			/* 74: ALTQ (deprecated) */
-	cdev_iop_init(NIOP,iop),	/* 75: I2O IOP control interface */
+	cdev_notdef(),			/* 75: I2O IOP control interface */
 	cdev_radio_init(NRADIO, radio), /* 76: generic radio I/O */
-	cdev_usbdev_init(NUSCANNER,uscanner),	/* 77: USB scanners */
+	cdev_notdef(),			/* 77: USB scanners */
 	cdev_systrace_init(NSYSTRACE,systrace),	/* 78: system call tracing */
 	cdev_bio_init(NBIO,bio),	/* 79: ioctl tunnel */
 	cdev_notdef(),			/* 80: gpr? XXX */
 	cdev_ptm_init(NPTY,ptm),	/* 81: pseudo-tty ptm device */
 	cdev_hotplug_init(NHOTPLUG,hotplug), /* 82: devices hot plugging */
 	cdev_notdef(),			/* 83: ACPI */
-	cdev_bthub_init(NBTHUB,bthub),	/* 84: bthub */
+	cdev_notdef(),			/* 84: bthub */
 	cdev_notdef(),			/* 85: NVRAM interface */
 	cdev_notdef(),			/* 86: agp */
 	cdev_drm_init(NDRM,drm),	/* 87: drm */
-	cdev_gpio_init(NGPIO,gpio),	/* 88: gpio */
+	cdev_notdef(),			/* 88: gpio */
 	cdev_vscsi_init(NVSCSI,vscsi),	/* 89: vscsi */
 	cdev_disk_init(1,diskmap),	/* 90: disk mapper */
 	cdev_pppx_init(NPPPX,pppx),     /* 91: pppx */
