@@ -109,8 +109,6 @@
 extern int db_console;
 #endif
 
-#include "isa.h"
-#include "isadma.h"
 #include "ksyms.h"
 
 #include "com.h"

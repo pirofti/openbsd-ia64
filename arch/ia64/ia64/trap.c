@@ -40,8 +40,6 @@
 #include <machine/db_machdep.h>
 #endif
 
-#include "isa.h"
-
 #ifdef KGDB
 #include <sys/kgdb.h>
 #endif
