@@ -39,7 +39,7 @@ CMACHFLAGS+=	-fno-stack-protector
 COPTS?=		-O2
 CFLAGS=		${DEBUG} ${CWARNFLAGS} ${CMACHFLAGS} ${COPTS} ${PIPE}
 AFLAGS=		-D_LOCORE -x assembler-with-cpp ${CMACHFLAGS}
-LINKFLAGS=	-Ttext 0xffffffff801001e0 -e start --warn-common
+LINKFLAGS=	-Ttext 0x9ffc000000010500 -e start --warn-common
 
 .if ${IDENT:M-DDDB_STRUCT}
 DB_STRUCTINFO=	db_structinfo.h
