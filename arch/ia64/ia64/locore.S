@@ -65,7 +65,7 @@ kstack_top:
  * The EFI loader passes the physical address of the bootinfo block in
  * register r8.
  */
-ENTRY_NOPROFILE(__start, 1)
+ENTRY_NOPROFILE(start, 1)
 	.prologue
 	.save	rp,r0
 	.body
@@ -138,7 +138,7 @@ ENTRY_NOPROFILE(__start, 1)
 }
 	/* NOTREACHED */
 1:	br.cond.sptk.few 1b
-END(__start)
+END(start)
 
 #ifdef SMP
 /*
